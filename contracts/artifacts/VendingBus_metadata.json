@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Complete",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "cleanup",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "transacts",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/vendingbus.sol": "VendingBus"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/vendingbus.sol": {
+			"keccak256": "0x0646c7d06a82eacd2b6ecbef1c1ce22107c5a3eebf664a648ddf34010229b549",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://1107f143653a211c112445803b644d91bad839df078a89f9b2adc0ccdecef3d8",
+				"dweb:/ipfs/QmWmTeQGZcx58kYqZbLNFU1CMB5GWpWNq9g73ud3kLpBat"
+			]
+		}
+	},
+	"version": 1
+}
