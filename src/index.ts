@@ -9,15 +9,18 @@ config();
 const contract_address = process.env.CONTRACT;
 
 const init = async function () {
-    const customWsProvider = new providers.JsonRpcProvider(
+    const provider = new providers.JsonRpcProvider(
         'https://polygon-rpc.com/',
         137
+    );
+    const memProvider = new providers.WebSocketProvider(
+        'wss://ws-matic-mainnet.chainstacklabs.com'
     );
 
     const contract = new Contract(
         contract_address,
         ['event Complete(address,uint256)'],
-        customWsProvider
+        provider
     );
 
     console.log('Listening for transactions...');
@@ -27,6 +30,16 @@ const init = async function () {
             'Received transaction from ' + c,
             'Selected Item: ' + d.toHexString()
         );
+    });
+
+    memProvider.on('pending', async (tx) => {
+        const txInfo = await memProvider.getTransaction(tx);
+
+        if (!txInfo) return;
+
+        if (txInfo.to === contract_address) {
+            log.debug(txInfo);
+        }
     });
 };
 
